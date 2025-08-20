@@ -2,5 +2,5 @@
   <%= render partial: "quest_list", locals: { quest_list: @quest_list } %>
 <% end %>
 <%= turbo_stream.replace "new_quest_form" do %> 
-  <%= render partial: "form", quest_list: QuestList.new %>
+  <%= render partial: "form", locals: { quest_list: QuestList.new } %>
 <% end %>

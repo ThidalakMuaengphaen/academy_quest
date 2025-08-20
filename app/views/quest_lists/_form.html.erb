@@ -1,4 +1,4 @@
-<%= form_with(model: @quest_list) do |f| %>
+<%= form_with(model: quest_list, id: "quest_form", data: { controller: "quest-form" }) do |f| %>
   <div class="mb-4">
     <%= f.text_field :title, class: "w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 transition", required: true %>
     <%= f.hidden_field :completed, value: false %>
