@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/thidalak/quest/app/controllers/application_controller.rb": {
+      "/Users/thidalak/Desktop/academy_quest/app/controllers/application_controller.rb": {
         "lines": [
           0,
           null,
@@ -10,14 +10,96 @@
         ],
         "branches": {}
       },
-      "/Users/thidalak/quest/app/helpers/application_helper.rb": {
+      "/Users/thidalak/Desktop/academy_quest/app/controllers/quest_lists_controller.rb": {
+        "lines": [
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {}
+      },
+      "/Users/thidalak/Desktop/academy_quest/app/helpers/application_helper.rb": {
         "lines": [
           0,
           0
         ],
         "branches": {}
       },
-      "/Users/thidalak/quest/app/jobs/application_job.rb": {
+      "/Users/thidalak/Desktop/academy_quest/app/helpers/quest_lists_helper.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {}
+      },
+      "/Users/thidalak/Desktop/academy_quest/app/jobs/application_job.rb": {
         "lines": [
           0,
           null,
@@ -29,7 +111,7 @@
         ],
         "branches": {}
       },
-      "/Users/thidalak/quest/app/mailers/application_mailer.rb": {
+      "/Users/thidalak/Desktop/academy_quest/app/mailers/application_mailer.rb": {
         "lines": [
           0,
           0,
@@ -38,15 +120,22 @@
         ],
         "branches": {}
       },
-      "/Users/thidalak/quest/app/models/application_record.rb": {
+      "/Users/thidalak/Desktop/academy_quest/app/models/application_record.rb": {
         "lines": [
           0,
+          0,
+          0
+        ],
+        "branches": {}
+      },
+      "/Users/thidalak/Desktop/academy_quest/app/models/quest_list.rb": {
+        "lines": [
           0,
           0
         ],
         "branches": {}
       }
     },
-    "timestamp": 1755658194
+    "timestamp": 1755659421
   }
 }

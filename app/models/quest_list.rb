@@ -1,0 +1,2 @@
+class QuestList < ApplicationRecord
+end
