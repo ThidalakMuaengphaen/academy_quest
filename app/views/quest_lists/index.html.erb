@@ -1,4 +1,4 @@
-<div class="h-210 bg-gradient-to-br from-blue-50 via-sky-50 to-indigo-50 pt-18 pb-74 px-16 md:px-24">
+<div class="w-full bg-gradient-to-br from-blue-50 via-sky-50 to-indigo-50 pt-18 pb-74 px-16 md:px-24">
   <div class="max-w-4xl mx-auto space-y-6">
     <!-- Profile Card -->
     <div class="flex flex-col md:flex-row items-center p-6 bg-gradient-to-r from-blue-100 to-blue-50 rounded-2xl shadow-lg gap-8 md:gap-12 transition transform hover:scale-[1.01] md:mb-12">
@@ -21,17 +21,8 @@
         <div>
           <h2 class="text-2xl font-bold text-pink-600 mb-4">➕ Add Quest</h2>
 
-          <%= form_with(model: @quest_list) do |f| %>
-            <div class="mb-4">
-              <%= f.label :title, class: "block text-gray-800 font-semibold mb-1" %>
-              <%= f.text_field :title,
-                    class: "w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 transition" %>
-            </div>
-
-            <div class="text-center mt-6">
-              <%= f.submit "Add Todo",
-                    class: "bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-6 rounded-full shadow-md hover:shadow-lg hover:scale-105 transform transition duration-200" %>
-            </div>
+          <%= turbo_frame_tag "new_quest_form" do %>
+            <%= render "form", quest_list: @quest_list %>
           <% end %>
         </div>
       </div>

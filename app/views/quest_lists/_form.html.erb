@@ -1,27 +1,11 @@
-<%= form_with(model: quest_list, class: "contents") do |form| %>
-  <% if quest_list.errors.any? %>
-    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-md mt-3">
-      <h2><%= pluralize(quest_list.errors.count, "error") %> prohibited this quest_list from being saved:</h2>
-
-      <ul class="list-disc ml-6">
-        <% quest_list.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="my-5">
-    <%= form.label :title %>
-    <%= form.text_field :title, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": quest_list.errors[:title].none?, "border-red-400 focus:outline-red-600": quest_list.errors[:title].any?}] %>
+<%= form_with(model: @quest_list) do |f| %>
+  <div class="mb-4">
+    <%= f.text_field :title, class: "w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 transition", required: true %>
+    <%= f.hidden_field :completed, value: false %>
   </div>
 
-  <div class="my-5 flex items-center gap-2">
-    <%= form.label :completed %>
-    <%= form.checkbox :completed, class: ["block shadow-sm rounded-md border order-first h-5 w-5", {"border-gray-400 focus:outline-blue-600": quest_list.errors[:completed].none?, "border-red-400 focus:outline-red-600": quest_list.errors[:completed].any?}] %>
-  </div>
-
-  <div class="inline">
-    <%= form.submit class: "w-full sm:w-auto rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white inline-block font-medium cursor-pointer" %>
+  <div class="text-center mt-6">
+    <%= f.submit "Add Quest",
+          class: "bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-6 rounded-full shadow-md hover:shadow-lg hover:scale-105 transform transition duration-200" %>
   </div>
 <% end %>

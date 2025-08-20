@@ -1,0 +1,3 @@
+<%= turbo_stream.replace dom_id(@quest_list) do %>
+    <%= render partial: "quest_list", locals: { quest_list: @quest_list } %>
+<% end %>
