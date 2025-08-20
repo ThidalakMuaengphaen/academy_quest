@@ -2,8 +2,15 @@
   <div class="bg-white rounded-xl shadow-md p-5 mb-4 flex justify-between items-start hover:shadow-xl hover:-translate-y-1 transition-all duration-200">
     <!-- Left: Checkbox + Content -->
     <div class="flex items-start space-x-3 w-full">
-      <%= form_with model: quest_list, method: :patch, data: { turbo_frame: dom_id(quest_list) } do |f| %>
-        <%= f.check_box :completed, { checked: quest_list.completed, class: "mt-2 w-5 h-5 accent-indigo-600 cursor-pointer", onchange: "this.form.submit();" } %>
+     <%= button_to quest_list_path(quest_list),
+        method: :patch,
+        params: { quest_list: { completed: !quest_list.completed } },
+        class: "mt-2 w-5 h-5 accent-indigo-600 cursor-pointer" do %>
+      <%= check_box_tag "completed",
+          true,
+          quest_list.completed,
+          disabled: true,
+          class: "pointer-events-none" %>
       <% end %>
 
 
