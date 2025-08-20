@@ -9,7 +9,7 @@
 
       <div class="flex-1 mt-1">
         <span id="title-<%= quest_list.id %>"
-          class="block text-lg md:text-xl font-semibold text-purple-800 <%= 'line-through text-gray-400' unless !quest_list.completed %>">
+          class="w-50 sm:w-[50vw] break-words block text-lg md:text-xl font-semibold text-purple-800 <%= 'line-through text-gray-400' unless !quest_list.completed %>">
           <%= quest_list.title %>
         </span>
       </div>

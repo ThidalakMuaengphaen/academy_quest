@@ -1,10 +1,7 @@
 <%= form_with(model: quest_list, id: "quest_form", data: { controller: "quest-form" }) do |f| %>
-  <div class="mb-4">
+  <div class="flex gap-10">
     <%= f.text_field :title, class: "w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 transition", required: true %>
     <%= f.hidden_field :completed, value: false %>
-  </div>
-
-  <div class="text-center mt-6">
     <%= f.submit "Add Quest", class: "bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-6 rounded-full shadow-md hover:shadow-lg hover:scale-105 transform transition duration-200" %>
   </div>
 <% end %>
