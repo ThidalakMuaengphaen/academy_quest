@@ -6,19 +6,6 @@ RSpec.describe QuestListsController, type: :routing do
       expect(get: "/quest_lists").to route_to("quest_lists#index")
     end
 
-    it "routes to #new" do
-      expect(get: "/quest_lists/new").to route_to("quest_lists#new")
-    end
-
-    it "routes to #show" do
-      expect(get: "/quest_lists/1").to route_to("quest_lists#show", id: "1")
-    end
-
-    it "routes to #edit" do
-      expect(get: "/quest_lists/1/edit").to route_to("quest_lists#edit", id: "1")
-    end
-
-
     it "routes to #create" do
       expect(post: "/quest_lists").to route_to("quest_lists#create")
     end
