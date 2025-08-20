@@ -1,24 +1,16 @@
 default: &default
-    adapter: postgresql
-    encoding: unicode
-    pool: 5
-    username: postgres.dgqurhdaiqmmqbmfkblt
-    password: <%= ENV['DATABASE_PASSWORD'] %>
-    host: aws-1-ap-southeast-1.pooler.supabase.com
-    port: 5432
-    database: postgres
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
 
 development:
   <<: *default
-  database: postgres
-  username: postgres.dgqurhdaiqmmqbmfkblt
-  password: <%= ENV["DATABASE_PASSWORD"] %>
-  host: aws-1-ap-southeast-1.pooler.supabase.com
-  port: 5432
+  database: academy001_development
 
 test:
   <<: *default
-  database: quest_test
+  database: academy001_test
 
 production:
   primary:
