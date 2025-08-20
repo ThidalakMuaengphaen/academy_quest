@@ -12,7 +12,7 @@ class QuestListsController < ApplicationController
     respond_to do |format|
       if @quest_list.save
         format.turbo_stream
-        format.html { redirect_to quest_lists_path, notice: "Quest list was successfully created." }
+        format.html { redirect_to root_path, notice: "Quest list was successfully created." }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.turbo_stream { render turbo_stream: turbo_stream.replace("form", partial: "form", locals: { quest_list: @quest_list }) }
@@ -25,7 +25,7 @@ class QuestListsController < ApplicationController
     respond_to do |format|
       if @quest_list.update(quest_list_params)
         format.turbo_stream
-        format.html { redirect_to quest_lists_path, notice: "Quest list was successfully updated." }
+        format.html { redirect_to root_path, notice: "Quest list was successfully updated." }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
@@ -36,7 +36,7 @@ class QuestListsController < ApplicationController
     @quest_list.destroy!
     respond_to do |format|
       format.turbo_stream
-      format.html { redirect_to quest_lists_path, notice: "Quest list was successfully destroyed.", status: :see_other }
+      format.html { redirect_to root_path, notice: "Quest list was successfully destroyed.", status: :see_other }
     end
   end
 
