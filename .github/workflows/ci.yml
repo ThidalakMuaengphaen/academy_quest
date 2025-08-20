@@ -77,5 +77,14 @@ jobs:
         run: |
           bin/rails db:create db:migrate
 
-      - name: Run tests
-        run: bundler exec rspec
+      - name: Run RSpec unit tests
+        run: |
+          bundle exec rspec spec/models
+
+      - name: Run RSpec integration tests
+        run: |
+          bundle exec rspec spec/requests
+
+      - name: Run Capybara e2e tests
+        run: |
+          bundle exec rspec
