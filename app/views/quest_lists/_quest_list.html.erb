@@ -2,16 +2,14 @@
   <div class="bg-white rounded-xl shadow-md p-5 mb-4 flex justify-between items-start hover:shadow-xl hover:-translate-y-1 transition-all duration-200">
     <!-- Left: Checkbox + Content -->
     <div class="flex items-start space-x-3 w-full">
-      <%= form_with model: quest_list, method: :patch do |f| %>
-        <%= check_box_tag :toggle, "1", !quest_list.completed,
-              id: "checkbox-#{quest_list.id}",
-              class: "mt-2 w-5 h-5 accent-indigo-600 cursor-pointer",
-              onchange: "this.form.submit();" %>
+      <%= form_with model: quest_list, method: :patch, data: { turbo_frame: dom_id(quest_list) } do |f| %>
+        <%= f.check_box :completed, { checked: quest_list.completed, class: "mt-2 w-5 h-5 accent-indigo-600 cursor-pointer", onchange: "this.form.submit();" } %>
       <% end %>
+
 
       <div class="flex-1 mt-1">
         <span id="title-<%= quest_list.id %>"
-          class="block text-lg md:text-xl font-semibold text-purple-800 <%= 'line-through text-gray-400' unless quest_list.completed %>">
+          class="block text-lg md:text-xl font-semibold text-purple-800 <%= 'line-through text-gray-400' unless !quest_list.completed %>">
           <%= quest_list.title %>
         </span>
       </div>
