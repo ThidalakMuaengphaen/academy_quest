@@ -1,10 +1,12 @@
-<div id="<%= dom_id quest_list %>" class="w-full sm:w-auto my-5 space-y-5">
-  <div>
-    <strong class="block font-medium mb-1">Title:</strong>
-    <%= quest_list.title %>
+<%= turbo_frame_tag dom_id(quest_list) do %>
+  <div class="custom your style" >
+    <div class="custom your style">
+      <%= form_with model: quest_list, method: :patch do |f| %>
+        <%= f.check_box :completed,
+    checked: quest_list.completed, class: "custom your style", data: { controller: "checkbox", action: "change->checkbox#submit" }%>
+      <% end %>
+      <div class="custom your style <%= quest_list.completed ? "line-through" : "" %>"><%= quest_list.title %></div>
+    </div>
+    <%= link_to quest_list_path(quest_list), data: { turbo_method: :delete }, class: "text-red-500" do %>🗑️<% end %>
   </div>
-  <div>
-    <strong class="block font-medium mb-1">Completed:</strong>
-    <%= quest_list.completed? ? "Yes" : "No" %>
-  </div>
-</div>
+<% end %>

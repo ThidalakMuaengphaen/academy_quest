@@ -41,6 +41,10 @@
         <h1 class="text-3xl font-bold text-indigo-800 mb-6 flex items-center gap-2">
           📋 My Quest List
         </h1>
+
+        <%= turbo_frame_tag "quest_lists" do %>
+          <%= render partial: "quest_list", collection: @quest_lists, as: :quest_list %>
+        <% end %>
       </div>
     </div>
   </div>
