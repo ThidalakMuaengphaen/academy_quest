@@ -1,29 +1,14 @@
-<% content_for :title, "Quest lists" %>
-
-<div class="w-full">
-  <% if notice.present? %>
-    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-md inline-block" id="notice"><%= notice %></p>
-  <% end %>
-
-  <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Quest lists</h1>
-    <%= link_to "New quest list", new_quest_list_path, class: "rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white block font-medium" %>
-  </div>
-
-  <div id="quest_lists" class="min-w-full divide-y divide-gray-200 space-y-5">
-    <% if @quest_lists.any? %>
-      <% @quest_lists.each do |quest_list| %>
-        <div class="flex flex-col sm:flex-row justify-between items-center pb-5 sm:pb-0">
-          <%= render quest_list %>
-          <div class="w-full sm:w-auto flex flex-col sm:flex-row space-x-2 space-y-2">
-            <%= link_to "Show", quest_list, class: "w-full sm:w-auto text-center rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
-            <%= link_to "Edit", edit_quest_list_path(quest_list), class: "w-full sm:w-auto text-center rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
-            <%= button_to "Destroy", quest_list, method: :delete, class: "w-full sm:w-auto rounded-md px-3.5 py-2.5 text-white bg-red-600 hover:bg-red-500 font-medium cursor-pointer", data: { turbo_confirm: "Are you sure?" } %>
-          </div>
-        </div>
-      <% end %>
-    <% else %>
-      <p class="text-center my-10">No quest lists found.</p>
-    <% end %>
+<div class="h-210 bg-gradient-to-br from-blue-50 via-sky-50 to-indigo-50 pt-18 pb-74 px-16 md:px-24">
+  <div class="max-w-4xl mx-auto space-y-6">
+    <!-- Profile Card -->
+    <div class="flex flex-col md:flex-row items-center p-6 bg-gradient-to-r from-blue-100 to-blue-50 rounded-2xl shadow-lg gap-8 md:gap-12 transition transform hover:scale-[1.01] md:mb-12">
+      <div class="flex-shrink-0">
+        <%= image_tag "profile.jpeg", alt: "My profile", class: "w-40 h-40 md:w-64 md:h-64 object-cover rounded-2xl shadow-md border-4 border-white" %>
+      </div>
+      <div class="text-center md:text-left">
+        <h1 class="text-3xl md:text-4xl font-extrabold text-blue-800 mb-2">Thidalak Mueangphaen</h1>
+        <h2 class="text-lg md:text-2xl font-semibold text-blue-500 mb-6">(Noeynoey)</h2>
+      </div>
+    </div>
   </div>
 </div>
