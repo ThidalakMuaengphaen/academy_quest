@@ -13,29 +13,35 @@
             class: "inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-full shadow-md hover:bg-blue-700 hover:scale-105 transform transition" %>
       </div>
     </div>
-  </div>
+  
 
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8" data-controller="todo">
+      <!-- Add Quest Form -->
+      <div class="h-64 bg-white rounded-2xl shadow-xl p-6 flex flex-col justify-between md:mt-14">
+        <div>
+          <h2 class="text-2xl font-bold text-pink-600 mb-4">➕ Add Quest</h2>
 
-  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8" data-controller="todo">
-    <!-- Add Quest Form -->
-    <div class="h-64 bg-white rounded-2xl shadow-xl p-6 flex flex-col justify-between md:mt-14">
-      <div>
-        <h2 class="text-2xl font-bold text-pink-600 mb-4">➕ Add Quest</h2>
+          <%= form_with(model: @quest_list) do |f| %>
+            <div class="mb-4">
+              <%= f.label :title, class: "block text-gray-800 font-semibold mb-1" %>
+              <%= f.text_field :title,
+                    class: "w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 transition" %>
+            </div>
 
-        <%= form_with(model: @quest_list) do |f| %>
-          <div class="mb-4">
-            <%= f.label :title, class: "block text-gray-800 font-semibold mb-1" %>
-            <%= f.text_field :title,
-                  class: "w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 transition" %>
-          </div>
+            <div class="text-center mt-6">
+              <%= f.submit "Add Todo",
+                    class: "bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-6 rounded-full shadow-md hover:shadow-lg hover:scale-105 transform transition duration-200" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
 
-          <div class="text-center mt-6">
-            <%= f.submit "Add Todo",
-                  class: "bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-6 rounded-full shadow-md hover:shadow-lg hover:scale-105 transform transition duration-200" %>
-          </div>
-        <% end %>
+      <!-- Quest List -->
+      <div class="lg:col-span-2">
+        <h1 class="text-3xl font-bold text-indigo-800 mb-6 flex items-center gap-2">
+          📋 My Quest List
+        </h1>
       </div>
     </div>
-
   </div>
 </div>
