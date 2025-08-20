@@ -1,6 +1,102 @@
-<div class="your style">
-  <div class="your style">
-    <%= link_to "Back", root_path %>
-    My brag document
+<div class="min-h-screen bg-gradient-to-br from-blue-50 via-sky-50 to-indigo-50 p-6 md:p-10">
+  <div class="mx-auto max-w-4xl space-y-6">
+
+    <div class="mt-6">
+    <%= link_to "← Back to Todos", root_path, 
+        class: "inline-block py-2 text-blue font-semibold transition duration-300" %>
+    </div>
+
+
+    <!-- Header Card -->
+    <div class="rounded-2xl bg-white/90 backdrop-blur shadow-xl p-6 md:p-8 border border-blue-100">
+      <div class="flex flex-col md:flex-row items-center gap-6">
+        <%= image_tag "profile.jpeg", alt: "My profile",
+            class: "w-28 h-28 md:w-32 md:h-32 rounded-2xl object-cover shadow-md ring-4 ring-blue-100" %>
+
+        <div class="text-center md:text-left">
+          <h1 class="text-3xl md:text-4xl font-extrabold text-blue-700 tracking-tight">
+            My Brag Document
+          </h1>
+          <p class="mt-2 text-xl font-semibold text-blue-900">Thidalak Mueangphaen</p>
+          <p class="mt-1 inline-block rounded-full bg-blue-100 px-4 py-1 text-blue-700 text-sm md:text-base">
+            Because we are not born alone on this earth, it is important to participate and help ✨
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Goal -->
+    <div class="rounded-2xl bg-white shadow-xl p-6 md:p-8 border border-blue-100">
+      <h2 class="text-2xl font-bold text-blue-700">Goal</h2>
+      <ol class="mt-2 pl-6 text-blue-900/90 leading-relaxed list-decimal">
+        <li>รับฟัง Requirements จากผู้ที่มีปัญหาต้องการให้เราช่วยเหลือ (ซึ่งไม่ได้หมายถึงลูกค้าอย่างเดียว)</li>
+        <li>เข้าใจและเรียนรู้ Mobile technology ต่าง ๆ ทั้ง Front-end และ background service รวมถึงอยาก Deploy App ทั้ง iOS and Android<li>
+        <li>ให้ความคิดเห็นผู้อื่นอย่างมีใจเป็นกลาง และรับฟังความคิดเห็นคนอื่นได้อย่างไม่ขุ่นเคือง</li>
+        <li>พิมพ์ดีดได้ 55 wpm , acc. 95%</li>
+        <li>อ่านหนังสือเพิ่มความรู้และประสบการณ์ ให้ได้ 5 เล่ม ใน 1 ปี</li>
+      </ol>
+    </div>
+
+    <!-- Action (4 sub-headings) -->
+    <div class="rounded-2xl bg-white shadow-xl p-6 md:p-8 border border-blue-100">
+      <h2 class="text-2xl font-bold text-blue-700 mb-4">Action</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <!-- Self -->
+        <div class="rounded-2xl border border-blue-100 bg-gradient-to-br from-white to-blue-50 p-5
+                    hover:-translate-y-0.5 hover:shadow-lg transition">
+        <div class="flex items-center gap-2">
+            <span class="inline-grid place-items-center w-8 h-8 rounded-full bg-blue-600 text-white font-bold">1</span>
+            <h3 class="text-lg font-semibold text-blue-800">Self</h3>
+        </div>
+        <ul class="mt-2 pl-6 text-blue-900/80 list-disc">
+            <li>ฝึกเขียน Flutter สัปดาห์ละ 4 ครั้ง อย่างต่ำครั้งละ 1 ชั่วโมง</li>
+            <li>อ่าน docs (ก่อน)(เอง)ทุกครั้งเมื่อติดปัญหา</li>
+            <li>หาไอเดียการทำแอพพลิเคชันใหม่ๆ อยู่เสมอ โดยการอ่าน Blog หรือดูคลิป ทุกวันวันละ 30 นาที</li>
+            <li>อ่านหนังสือ วันละ 5 หน้า</li>
+            <li>เรียนภาษาจีนทุกวัน</li>
+        </ul>
+        </div>
+
+        <!-- Team -->
+        <div class="rounded-2xl border border-blue-100 bg-gradient-to-br from-white to-blue-50 p-5
+                    hover:-translate-y-0.5 hover:shadow-lg transition">
+        <div class="flex items-center gap-2">
+            <span class="inline-grid place-items-center w-8 h-8 rounded-full bg-blue-600 text-white font-bold">2</span>
+            <h3 class="text-lg font-semibold text-blue-800">Team</h3>
+        </div>
+        <ul class="mt-2 pl-6 text-blue-900/80 list-disc">
+            <li>ช่วยเป็น FA นำทีม สัปดาห์ละ 2 ครั้ง</li>
+            <li>ช่วยออกความคิดเห็น เสนอไอเดียอยู่เสมอ</li>
+            <li>เป็นผู้ฟังที่ดี ให้ความร่วมมือกับเพื่อนร่วมทีมเสมอ</li>
+        </ul>
+        </div>
+
+        <!-- ODT -->
+        <div class="rounded-2xl border border-blue-100 bg-gradient-to-br from-white to-blue-50 p-5
+                    hover:-translate-y-0.5 hover:shadow-lg transition">
+        <div class="flex items-center gap-2">
+            <span class="inline-grid place-items-center w-8 h-8 rounded-full bg-blue-600 text-white font-bold">3</span>
+            <h3 class="text-lg font-semibold text-blue-800">ODT</h3>
+        </div>
+        <ul class="mt-2 pl-6 text-blue-900/80 list-disc">
+            <li>เป็นรุ่นน้อง Farm ที่ตั้งใจศึกษาต่อจากพี่ ๆ รับพลังสุดตึงมาพัฒนาฝีมือต่อ</li>
+            <li>เป็นพนักงานที่ซื่อสัตย์</li>
+        </ul>
+        </div>
+
+        <!-- Client -->
+        <div class="rounded-2xl border border-blue-100 bg-gradient-to-br from-white to-blue-50 p-5
+                    hover:-translate-y-0.5 hover:shadow-lg transition">
+        <div class="flex items-center gap-2">
+            <span class="inline-grid place-items-center w-8 h-8 rounded-full bg-blue-600 text-white font-bold">4</span>
+            <h3 class="text-lg font-semibold text-blue-800">Client></h3>
+        </div>
+            <ul class="list-disc pl-6">
+                <li class="mt-2 text-blue-900/80">ทำ Solution ที่ตอบโจทย์สิ่งที่ลูกค้าต้องการ เช่น ทำ BMATraing ให้เป็นเว็บไซต์ที่ใช้งานได้จริง</li>
+            </ul>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
