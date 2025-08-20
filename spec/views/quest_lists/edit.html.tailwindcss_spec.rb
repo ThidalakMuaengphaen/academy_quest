@@ -16,7 +16,6 @@ RSpec.describe "quest_lists/edit", type: :view do
     render
 
     assert_select "form[action=?][method=?]", quest_list_path(quest_list), "post" do
-
       assert_select "input[name=?]", "quest_list[title]"
 
       assert_select "input[name=?]", "quest_list[completed]"
