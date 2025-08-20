@@ -4,6 +4,7 @@ class QuestListsController < ApplicationController
   # GET /quest_lists or /quest_lists.json
   def index
     @quest_lists = QuestList.all
+    @quest_list = QuestList.new
   end
 
   # GET /quest_lists/1 or /quest_lists/1.json

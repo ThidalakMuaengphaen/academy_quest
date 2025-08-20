@@ -5,6 +5,7 @@
       <div class="flex-shrink-0">
         <%= image_tag "profile.jpeg", alt: "My profile", class: "w-40 h-40 md:w-64 md:h-64 object-cover rounded-2xl shadow-md border-4 border-white" %>
       </div>
+
       <div class="text-center md:text-left">
         <h1 class="text-3xl md:text-4xl font-extrabold text-blue-800 mb-2">Thidalak Mueangphaen</h1>
         <h2 class="text-lg md:text-2xl font-semibold text-blue-500 mb-6">(Noeynoey)</h2>
@@ -12,5 +13,29 @@
             class: "inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-full shadow-md hover:bg-blue-700 hover:scale-105 transform transition" %>
       </div>
     </div>
+  </div>
+
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8" data-controller="todo">
+    <!-- Add Quest Form -->
+    <div class="h-64 bg-white rounded-2xl shadow-xl p-6 flex flex-col justify-between md:mt-14">
+      <div>
+        <h2 class="text-2xl font-bold text-pink-600 mb-4">➕ Add Quest</h2>
+
+        <%= form_with(model: @quest_list) do |f| %>
+          <div class="mb-4">
+            <%= f.label :title, class: "block text-gray-800 font-semibold mb-1" %>
+            <%= f.text_field :title,
+                  class: "w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 transition" %>
+          </div>
+
+          <div class="text-center mt-6">
+            <%= f.submit "Add Todo",
+                  class: "bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-6 rounded-full shadow-md hover:shadow-lg hover:scale-105 transform transition duration-200" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
   </div>
 </div>
