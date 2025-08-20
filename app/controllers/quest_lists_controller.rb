@@ -2,7 +2,7 @@ class QuestListsController < ApplicationController
   before_action :set_quest_list, only: %i[ update destroy ]
 
   def index
-    @quest_lists = QuestList.all.order(id: :asc)
+    @quest_lists = QuestList.all.order(id: :desc)
     @quest_list = QuestList.new
   end
 
@@ -15,7 +15,7 @@ class QuestListsController < ApplicationController
         format.html { redirect_to root_path, notice: "Quest list was successfully created." }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.turbo_stream { render turbo_stream: turbo_stream.replace("form", partial: "form", locals: { quest_list: @quest_list }) }
+        format.turbo_stream { render turbo_stream: turbo_stream.replace("new_quest_form", partial: "form", locals: { quest_list: @quest_list }) }
       end
     end
   end
@@ -26,8 +26,6 @@ class QuestListsController < ApplicationController
       if @quest_list.update(quest_list_params)
         format.turbo_stream
         format.html { redirect_to root_path, notice: "Quest list was successfully updated." }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
       end
     end
   end
@@ -36,7 +34,7 @@ class QuestListsController < ApplicationController
     @quest_list.destroy!
     respond_to do |format|
       format.turbo_stream
-      format.html { redirect_to root_path, notice: "Quest list was successfully destroyed.", status: :see_other }
+      format.html { redirect_to root_path }
     end
   end
 
