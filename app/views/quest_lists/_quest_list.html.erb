@@ -1,12 +1,30 @@
 <%= turbo_frame_tag dom_id(quest_list) do %>
-  <div class="custom your style" >
-    <div class="custom your style">
+  <div class="bg-white rounded-xl shadow-md p-5 mb-4 flex justify-between items-start hover:shadow-xl hover:-translate-y-1 transition-all duration-200">
+    <!-- Left: Checkbox + Content -->
+    <div class="flex items-start space-x-3 w-full">
       <%= form_with model: quest_list, method: :patch do |f| %>
-        <%= f.check_box :completed,
-    checked: quest_list.completed, class: "custom your style", data: { controller: "checkbox", action: "change->checkbox#submit" }%>
+        <%= check_box_tag :toggle, "1", !quest_list.completed,
+              id: "checkbox-#{quest_list.id}",
+              class: "mt-2 w-5 h-5 accent-indigo-600 cursor-pointer",
+              onchange: "this.form.submit();" %>
       <% end %>
-      <div class="custom your style <%= quest_list.completed ? "line-through" : "" %>"><%= quest_list.title %></div>
+
+      <div class="flex-1 mt-1">
+        <span id="title-<%= quest_list.id %>"
+          class="block text-lg md:text-xl font-semibold text-purple-800 <%= 'line-through text-gray-400' unless quest_list.completed %>">
+          <%= quest_list.title %>
+        </span>
+      </div>
     </div>
-    <%= link_to quest_list_path(quest_list), data: { turbo_method: :delete }, class: "text-red-500" do %>🗑️<% end %>
+
+    <!-- Right: Delete -->
+    <div class="flex flex-col items-end ml-4 mt-1">
+      <%= button_to "🗑️",
+      quest_list,
+      method: :delete,
+      data: { turbo_confirm: "Are you sure?" },
+      form: { data: { turbo_stream: true } },
+      class: "text-red-600" %>
+    </div>
   </div>
 <% end %>
